@@ -1,0 +1,22 @@
+server:
+  port : 8761
+
+spring:
+  application:
+    name:eureka-server
+
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address : true
+    status-page-url-path : /actuator/info
+    health-check-url-path : /actuator/health
+    leaser-expiration-duration-in-seconds : 30
+    leaser-renewal-interval-in-seconds : 30
+  client:
+    registerWithEureka : false
+    fetchRegistry : false
+    serviceUrl:
+      defaultZone : http://localhost:8761/eureka/
+    server:
+      enable-self-preservation: false
